@@ -1,0 +1,61 @@
+<html>
+	<head>
+	<title>What next app by Divya </title>
+	<style>
+		* {font-size:60px; }
+		body{background-color:lightblue;}
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let name = document.getElementById("name");
+			let job = document.getElementById("job");
+			let ms = document.getElementById("ms");
+			let mba = document.getElementById("mba");
+			let ans = document.getElementById("ans");
+			
+			let choice= "";
+			if (job.checked)	choice= "job";
+			else if (ms.checked)	choice= "ms";
+			else 		choice= "mba"
+					
+			if (name.value == "")
+				{
+					alert("name can not be empty");	
+					ans.innerHTML= "";
+					name.focus();
+					return;
+				}
+			else if (name.value.trim() == "")
+				{
+					alert("name can not be spaces ");
+					name.value="";
+					ans.innerHTML= "";
+					name.focus();
+					return;
+				}
+	
+		
+			let msg = "name  " +  name.value  + " choice  " +  choice;
+			ans.innerHTML = msg;
+		}
+	</script>
+	</head>
+	<body>
+	<center>
+	<h1> What nwxt</h1>
+	<form onsubmit="find()" >
+	<input type="text" step="any" placeholder="enter your name" id="name"/>
+	<br><br>
+	<input type="radio" name="c" id="job" checked="true"/>job
+	<input type="radio" name="c" id="ms"/>ms
+	<input type="radio" name="c" id="mba"/>mba
+	<br><br>
+	<input type="submit"/>
+	</form>
+	<h2 id="ans"></h2>
+	</center>
+	</body>
+</html>
+
